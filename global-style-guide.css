@@ -1,0 +1,138 @@
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  /* Цвета */
+  --color-white: #FFFFFF;
+  --color-black: #0E0E0E;
+
+  --color-gray-1: #333333;
+  --color-gray-2: #828282;
+  --color-gray-3: #DDDDDD;
+  --color-gray-4: #F5F5F5;
+
+  --color-error: #DB371F;
+  --color-primary: #F97316;
+
+  --color-bg-main: #0F172A;
+  --color-bg-1: #141C2F;
+  --color-bg-2: #232B3E;
+  --color-bg-3: #192134;
+  --color-bg-4: #272F42;
+}
+
+/* Типографика */
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 120%;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+  margin: 0;
+  line-height: 120%;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 32px;
+  margin: 0;
+  line-height: 120%;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 120%;
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 120%;
+  margin: 0;
+}
+
+.text-20 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background-color: var(--color-bg-main);
+  font-size: 16px;
+  margin: 0;
+  color: var(--color-white);
+  line-height: 150%;
+}
+
+.body-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.caption {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.caption-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.text-12 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.label-mobile {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1242px) {
+  h3, h2, h1 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  .label {
+    font-size: 16px;
+  }
+}
