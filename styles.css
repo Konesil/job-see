@@ -8,6 +8,10 @@
 header {
     background-color: var(--color-bg-3);
     padding: 16px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 4;
 }
 
 .header-block {
@@ -111,7 +115,8 @@ nav {
     color: var(--color-white);
 }
 
-.main-footer {
+.main-footer,
+.footer-main {
     color: var(--color-gray-3);
     margin-top: 64px;
     display: flex;
@@ -683,20 +688,46 @@ footer {
 
 /* GRADIEND  */
 .animated-gradient-button {
-
-
     cursor: pointer;
-    background: linear-gradient(270deg, var(--color-primary), #fe9f29, #F97316);
-    background-size: 400% 400%;
+    background: linear-gradient(270deg,
+            var(--color-primary),
+            #f97316,
+            #ff8a00,
+            #ffc107,
+            #f97316,
+            var(--color-primary));
+    background-size: 600% 600%;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease;
 }
 
+.about-content {
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.about-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
 /* Анимация только на ПК */
 @media (hover: hover) and (pointer: fine) {
     .animated-gradient-button {
-        animation: gradientFlow 4s ease infinite;
+        animation: gradientFlow 3s ease infinite;
     }
 }
 
@@ -1012,6 +1043,14 @@ footer {
     .body-bold.fill-button.reviews,
     .block-step {
         display: none;
+    }
+
+    .footer-main {
+        margin-top: 28px;
+    }
+
+    .faq-block {
+        gap: 32px;
     }
 
     .reviews-one {

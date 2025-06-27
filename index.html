@@ -255,13 +255,13 @@
                             <div class="left-reviews-footer-block">
                                 <img src="img/up.png" alt="">
                                 <div class="text-left-reviews-footer-block">
-                                    <h1 class="counter" data-target="8000">0</h1>
+                                    <h1 class="counter" data-target="8000" data-suffix="+">0+</h1>
                                     <p>Улучшенных резюме</p>
                                 </div>
 
                             </div>
                             <div class="right-reviews-footer-block">
-                                <h1 class="counter" data-target="93">0%</h1>
+                            <h1 class="counter" data-target="93" data-suffix="%">0%</h1>
                                 <p>Получают приглашение на собеседование в течение 14 дней</p>
                             </div>
 
@@ -400,7 +400,7 @@
                                     class="body-bold fill-button animated-gradient-button">Запустить
                                     карьеру с Job-see</button></a>
                         </div>
-                        <div class="main-footer">
+                        <div class="footer-main">
                             <img src="img/trophy.svg" alt="">
                             <div class="text-20">
                                 Пользователи Job-see уже работают в Google, Яндексе, Ozon и других топ-компаниях
@@ -556,25 +556,10 @@
             leftArrow.addEventListener('click', () => {
                 container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
             });
-
             const about = document.querySelector('.about-content');
 
-           
             if (window.innerWidth <= 1024) {
                 const cards = about.querySelectorAll('.about-one-block');
-                const cardWidth = cards[0].offsetWidth + 30;
-                let index = 0;
-
-               
-                setInterval(() => {
-                    index++;
-                    if (index >= cards.length - 1) {
-                        index = 0;
-                        about.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        about.scrollBy({ left: cardWidth, behavior: 'smooth' });
-                    }
-                }, 4000);
 
                 let isDown = false;
                 let startX;
@@ -601,7 +586,7 @@
                     if (!isDown) return;
                     e.preventDefault();
                     const x = e.pageX - about.offsetLeft;
-                    const walk = (x - startX) * 1.5; 
+                    const walk = (x - startX) * 1.5;
                     about.scrollLeft = scrollLeft - walk;
                 });
 
@@ -630,7 +615,7 @@
                 document.body.style.overflow = isOpen ? '' : 'hidden';
             });
             const fixedButton = document.getElementById('fixedButton');
-            const targetSections = ['about', 'reviews', 'steps', 'footer-block'];
+            const targetSections = ['about', 'reviews', 'footer-block'];
 
 
             if (window.innerWidth > 604) {
@@ -648,7 +633,7 @@
                 }
             );
 
-       
+
             targetSections.forEach(id => {
                 const el = document.getElementById(id);
                 if (el) observer.observe(el);
