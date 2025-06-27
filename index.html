@@ -565,17 +565,17 @@
                 isDown = true;
                 startX = e.pageX - about.offsetLeft;
                 scrollLeft = about.scrollLeft;
-                about.style.cursor = 'grabbing';
+                // about.style.cursor = 'grabbing';
             });
 
             about.addEventListener('mouseleave', () => {
                 isDown = false;
-                about.style.cursor = 'grab';
+                // about.style.cursor = 'grab';
             });
 
             about.addEventListener('mouseup', () => {
                 isDown = false;
-                about.style.cursor = 'grab';
+                // about.style.cursor = 'grab';
             });
 
             about.addEventListener('mousemove', (e) => {
