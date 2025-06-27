@@ -169,13 +169,29 @@ nav {
     justify-content: space-between;
     gap: 30px;
     scrollbar-width: none;
-    /* Firefox */
+
 }
 
 .familiar-content::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari */
+
 }
+
+.about-content {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
+
+}
+
+.about-content::-webkit-scrollbar {
+    display: none;
+
+}
+
 
 .familiar-one-block p {
     margin: 12px 0 0;
@@ -711,7 +727,7 @@ footer {
 
     overflow-x: auto;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    /* -webkit-overflow-scrolling: touch; */
 
     scrollbar-width: none;
     /* Firefox */
@@ -1047,6 +1063,7 @@ footer {
 
     .footer-main {
         margin-top: 28px;
+        font-size: 16px !important;
     }
 
     .faq-block {

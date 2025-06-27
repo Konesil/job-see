@@ -41,7 +41,7 @@
                         <div class="nav__button caption-bold">Начать сейчас</div>
                     </a>
                 </div>
-                <div class="logo-header"><img src="img/logo.svg" alt=""></div>
+                <a href="#main-block" class="logo-header"><img src="img/logo.svg" alt=""></a>
                 <nav>
                     <div class="nav__links">
                         <a href="#about" class="caption" href="">Почему это работает</a>
@@ -60,7 +60,7 @@
     </header>
     <main>
         <div class="container">
-            <div class="main-block">
+            <div id="main-block" class="main-block">
                 <div class="main-left-block">
 
 
@@ -261,7 +261,7 @@
 
                             </div>
                             <div class="right-reviews-footer-block">
-                            <h1 class="counter" data-target="93" data-suffix="%">0%</h1>
+                                <h1 class="counter" data-target="93" data-suffix="%">0%</h1>
                                 <p>Получают приглашение на собеседование в течение 14 дней</p>
                             </div>
 
@@ -557,52 +557,34 @@
                 container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
             });
             const about = document.querySelector('.about-content');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
 
-            if (window.innerWidth <= 1024) {
-                const cards = about.querySelectorAll('.about-one-block');
+            about.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - about.offsetLeft;
+                scrollLeft = about.scrollLeft;
+                about.style.cursor = 'grabbing';
+            });
 
-                let isDown = false;
-                let startX;
-                let scrollLeft;
+            about.addEventListener('mouseleave', () => {
+                isDown = false;
+                about.style.cursor = 'grab';
+            });
 
-                about.addEventListener('mousedown', (e) => {
-                    isDown = true;
-                    about.classList.add('dragging');
-                    startX = e.pageX - about.offsetLeft;
-                    scrollLeft = about.scrollLeft;
-                });
+            about.addEventListener('mouseup', () => {
+                isDown = false;
+                about.style.cursor = 'grab';
+            });
 
-                about.addEventListener('mouseleave', () => {
-                    isDown = false;
-                    about.classList.remove('dragging');
-                });
-
-                about.addEventListener('mouseup', () => {
-                    isDown = false;
-                    about.classList.remove('dragging');
-                });
-
-                about.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    e.preventDefault();
-                    const x = e.pageX - about.offsetLeft;
-                    const walk = (x - startX) * 1.5;
-                    about.scrollLeft = scrollLeft - walk;
-                });
-
-                let touchStartX = 0;
-                let touchStartScroll = 0;
-
-                about.addEventListener('touchstart', (e) => {
-                    touchStartX = e.touches[0].clientX;
-                    touchStartScroll = about.scrollLeft;
-                });
-
-                about.addEventListener('touchmove', (e) => {
-                    const deltaX = e.touches[0].clientX - touchStartX;
-                    about.scrollLeft = touchStartScroll - deltaX;
-                });
-            }
+            about.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - about.offsetLeft;
+                const walk = (x - startX) * 1; 
+                about.scrollLeft = scrollLeft - walk;
+            });
             const burgerIcon = document.getElementById('burgerIcon');
             const mobileMenu = document.getElementById('mobileMenu');
 
